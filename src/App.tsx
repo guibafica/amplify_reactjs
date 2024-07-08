@@ -10,7 +10,10 @@ Amplify.configure(awsExports);
 
 export default function App() {
   return (
-    <Authenticator>
+    <Authenticator
+      loginMechanisms={["email"]}
+      socialProviders={["amazon", "apple", "facebook", "google"]}
+    >
       {({ signOut, user }) => (
         <main>
           <h1>Hello {user?.username}</h1>
